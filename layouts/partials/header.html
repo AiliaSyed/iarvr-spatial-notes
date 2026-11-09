@@ -1,0 +1,16 @@
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="{{ "/" | relURL }}" aria-label="Spatial Notes home">
+      <span class="brand-mark">S<span class="mark-star">✳</span></span>
+      <span class="brand-type"><strong>spatial<span class="brand-dot">.</span>notes</strong><small>IARVR / WINTER 26–27</small></span>
+    </a>
+    <button class="mobile-menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="main-navigation"><span></span><span></span><span></span></button>
+    <nav id="main-navigation" class="main-nav" aria-label="Main navigation">
+      <a href="{{ "/" | relURL }}" {{ if .IsHome }}aria-current="page"{{ end }}>Overview</a>
+      <a href="{{ "/posts/" | relURL }}" {{ if eq .Section "posts" }}aria-current="page"{{ end }}>Journal</a>
+      <a href="{{ "/labs/" | relURL }}">Labs</a>
+      <a href="{{ "/reverse-classroom/" | relURL }}">Reverse Classroom</a>
+      <a class="nav-feature" href="{{ "/project/" | relURL }}">Main Project <span>↗</span></a>
+    </nav>
+  </div>
+</header>

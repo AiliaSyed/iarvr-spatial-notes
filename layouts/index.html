@@ -1,0 +1,42 @@
+{{ define "main" }}
+<section class="hero-wrap container">
+ <div class="hero">
+  <div class="hero-glow hero-glow-one"></div><div class="hero-glow hero-glow-two"></div>
+  <div class="hero-copy">
+    <div class="eyebrow eyebrow-light"><span class="eyebrow-pulse"></span> TU DARMSTADT · COMPUTER SCIENCE · WS 2026/27</div>
+    <h1>Exploring <em>interaction</em> in virtual worlds<span class="heading-dot">.</span></h1>
+    <p>A public learning journal on VR, human-computer interaction, and the creative process of building immersive experiences. From small Unity experiments to a final research prototype.</p>
+    <div class="hero-actions"><a href="{{ "/posts/" | relURL }}" class="button button-primary">Explore the journal <span aria-hidden="true">↗</span></a><a href="{{ "/project/" | relURL }}" class="button button-ghost">View the main project <span aria-hidden="true">→</span></a></div>
+    <div class="hero-footnote"><span class="hero-foot-icon">✳</span> Documenting the process, decisions, experiments and lessons learned.</div>
+  </div>
+  <div class="hero-art">
+    <div class="hero-art-image"><img src="{{ "images/spellcasting-hero.svg" | relURL }}" alt="Concept art: two glowing three-dimensional spell tracing paths inside a virtual arena"></div>
+    <div class="hero-art-shade"></div>
+    <span class="hero-art-tag"><span class="tag-led"></span> FEATURED EXPERIMENT / CONCEPT ART</span>
+    <div class="floating-progress"><span class="float-icon">✦</span><span><strong>Dual-Path Spellcasting</strong><small>Timed bimanual interaction in VR</small></span><span class="float-arrow">↗</span></div>
+  </div>
+ </div>
+</section>
+<section class="section-intro container" aria-labelledby="what-title">
+  <div class="section-topline"><span class="section-kicker">01 / THE JOURNEY</span><span class="tiny-rule"></span><span class="section-side">BUILD · TEST · REFLECT</span></div>
+  <div class="section-split"><div><h2 id="what-title">One course.<br><span class="muted-heading">Many experiments.</span></h2></div><p>This space follows my journey through <strong>Interaction in Virtual and Augmented Reality</strong> — where concepts from HCI meet hands-on VR development.</p></div>
+  <div class="topic-grid">
+   <a href="{{ "/labs/" | relURL }}" class="topic-card"><span class="topic-number">01 / LABS</span><span class="topic-icon icon-cyan">⌘</span><h3>Learning by building</h3><p>Unity fundamentals, XR setup, mini-projects and practical interaction challenges.</p><span class="topic-link">Explore the labs ↗</span></a>
+   <a href="{{ "/reverse-classroom/" | relURL }}" class="topic-card"><span class="topic-number">02 / REVERSE CLASSROOM</span><span class="topic-icon icon-violet">◈</span><h3>Learning by teaching</h3><p>Research, preparation, demonstrations and reflections from the teaching session.</p><span class="topic-link">See learning notes ↗</span></a>
+   <a href="{{ "/project/" | relURL }}" class="topic-card"><span class="topic-number">03 / FINAL PROJECT</span><span class="topic-icon icon-orange">✳</span><h3>Learning by experimenting</h3><p>Designing and evaluating a two-handed, timed path-tracing interaction technique.</p><span class="topic-link">Discover the project ↗</span></a>
+  </div>
+</section>
+<section class="featured-section container" aria-labelledby="featured-title">
+ <div class="featured-copy"><span class="section-kicker">CURRENT FOCUS / FINAL PROJECT</span><h2 id="featured-title">Dual-Path<br><span>Spellcasting.</span></h2><p>What if a quick-time event wasn't just a button press, but a coordinated movement through 3D space?</p><div class="feature-pills"><span>UNITY</span><span>META QUEST 3S</span><span>XR INTERACTION</span></div><a class="text-link" href="{{ "/project/" | relURL }}">Explore the concept <span>↗</span></a></div>
+ <div class="featured-image"><img src="{{ "images/spellcasting-hero.svg" | relURL }}" alt="Concept illustration of virtual hands tracing blue and orange spell paths"><span>CONCEPT VISUALIZATION · NOT A WORKING BUILD</span></div>
+</section>
+<section class="journal-section container" id="latest" aria-labelledby="latest-title">
+  <div class="section-topline"><span class="section-kicker">02 / THE JOURNAL</span><span class="tiny-rule"></span><a class="subtle-link" href="{{ "/posts/" | relURL }}">All entries ↗</a></div>
+  <div class="section-heading-row"><div><h2 id="latest-title">Latest from<br><span class="muted-heading">the lab.</span></h2><p>Small wins, unexpected problems, ideas worth exploring — and the process behind them.</p></div></div>
+  <div class="filters" role="group" aria-label="Filter journal entries"><button data-filter="all" class="filter is-active" aria-pressed="true">All entries</button><button data-filter="labs" class="filter" aria-pressed="false">Labs</button><button data-filter="final project" class="filter" aria-pressed="false">Final Project</button><button data-filter="reverse classroom" class="filter" aria-pressed="false">Reverse Classroom</button><button data-filter="course notes" class="filter" aria-pressed="false">Course Notes</button></div>
+  <div class="post-grid" data-post-grid>{{ $posts := where site.RegularPages "Section" "posts" }}{{ range first 6 $posts.ByDate.Reverse }}{{ partial "post-card.html" . }}{{ end }}</div>
+  <p class="empty-filter" hidden>No entries in this category yet.</p>
+  <div class="journal-more"><a class="button button-outline" href="{{ "/posts/" | relURL }}">Browse all journal entries <span>→</span></a></div>
+</section>
+<section class="about-section container"><div class="about-avatar" aria-hidden="true"><span>AR</span><div class="avatar-orbit"></div></div><div><span class="section-kicker">A NOTE FROM THE AUTHOR</span><h2>Curiosity, code, and a VR headset.</h2><p>I'm Ailia, a Computer Science student at TU Darmstadt with an interest in serious games, immersive experiences, and human-computer interaction. This journal is a place to share not only what works, but what I learn along the way.</p></div><a class="text-link" href="{{ "/about/" | relURL }}">About me ↗</a></section>
+{{ end }}

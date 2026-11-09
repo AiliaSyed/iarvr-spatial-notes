@@ -1,0 +1,7 @@
+<a href="{{ .RelPermalink }}" class="post-card" data-category="{{ .Params.category | lower }}" data-search="{{ printf "%s %s %s" .Title .Summary .Params.category | lower }}">
+  <div class="post-cover"><img src="{{ (.Params.cover | default "images/fallback.svg") | relURL }}" alt="" loading="lazy"><span class="cover-arrow" aria-hidden="true">↗</span></div>
+  <div class="post-meta"><span class="category-label">{{ .Params.category | default "Journal" }}</span><span>{{ .Date.Format "02 Jan 2006" }}</span></div>
+  <h3>{{ .Title }}</h3>
+  <p>{{ .Summary | plainify | truncate 125 }}</p>
+  <span class="post-bottom"><span class="post-status"><span class="status-dot"></span>{{ .Params.status | default "Learning notes" }}</span><span class="read-time">{{ .ReadingTime }} min read <span aria-hidden="true">↗</span></span></span>
+</a>

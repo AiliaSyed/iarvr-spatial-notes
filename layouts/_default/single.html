@@ -1,0 +1,8 @@
+{{ define "main" }}
+<article class="article-page container">
+  <a class="back-link" href="{{ if eq .Section "posts" }}{{ "/posts/" | relURL }}{{ else }}{{ "/" | relURL }}{{ end }}">← {{ if eq .Section "posts" }}Back to journal{{ else }}Back to overview{{ end }}</a>
+  <header class="article-head"><div class="article-meta"><span class="category-label">{{ .Params.category | default "Course Journal" }}</span><span class="dot-separator">·</span><span>{{ with .Date }}{{ .Format "02 Jan 2006" }}{{ end }}</span>{{ with .Params.status }}<span class="dot-separator">·</span><span>{{ . }}</span>{{ end }}</div><h1>{{ .Title }}</h1>{{ with .Description }}<p>{{ . }}</p>{{ else }}{{ with .Summary }}<p>{{ . | plainify }}</p>{{ end }}{{ end }}</header>
+  {{ with .Params.cover }}<figure class="article-cover"><img src="{{ . | relURL }}" alt="Illustration for {{ $.Title }}"><figcaption>{{ $.Params.imagecaption | default "Illustrative visual" }}</figcaption></figure>{{ end }}
+  <div class="article-layout"><div class="article-content prose">{{ .Content }}<div class="article-ending"><span>✳</span> End of entry · The work continues.</div></div><aside class="article-aside"><div class="aside-box"><span class="aside-heading">IN THIS ENTRY</span>{{ .TableOfContents }}</div><div class="aside-tip"><strong>Learning log</strong><p>Document the decisions, experiments, what failed and what changed — not just the finished result.</p></div></aside></div>
+</article>
+{{ end }}

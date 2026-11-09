@@ -1,0 +1,23 @@
+baseURL = 'https://AiliaSyed.github.io/iarvr-spatial-notes/'
+languageCode = 'en-us'
+title = 'Spatial Notes | IARVR 2026/27'
+enableRobotsTXT = true
+summaryLength = 30
+
+[pagination]
+  pagerSize = 12
+
+[params]
+  author = 'Ailia'
+  course = 'Interaction in Virtual and Augmented Reality'
+  semester = 'Winter Semester 2026/27'
+  description = 'A public learning journal documenting XR experiments, Unity labs and a bimanual path-tracing VR project at TU Darmstadt.'
+
+[markup]
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 3
+    ordered = false
+  [markup.highlight]
+    noClasses = false
+    lineNos = false
