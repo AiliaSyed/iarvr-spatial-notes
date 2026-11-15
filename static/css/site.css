@@ -102,3 +102,40 @@ html{scroll-padding-top:100px}
 .personal-note-body p{margin:12px 0}
 .personal-note-body strong{color:#255953}
 @media(max-width:760px){.personal-note summary{padding:17px 15px}.personal-note-body{padding:0 15px 17px}}
+
+
+/* Interactive image viewer for the XR learning journal */
+.article-content img.enlargeable-image,
+.article-cover img.enlargeable-image { cursor: zoom-in; transition: box-shadow .2s, outline-color .2s; outline: 2px solid transparent; outline-offset: 3px }
+.article-content img.enlargeable-image:hover,
+.article-cover img.enlargeable-image:hover { box-shadow: 0 12px 32px rgba(17, 45, 68, .19); outline-color: rgba(66, 165, 172, .35) }
+.article-content img.enlargeable-image:focus-visible,
+.article-cover img.enlargeable-image:focus-visible { outline: 3px solid #20a6a0 }
+.article-content p:has(> img.enlargeable-image)::after,
+.article-cover figcaption::after { content: '  ·  Click image to enlarge'; color: #2b8889; font-size: 11px; font-weight: 700 }
+.spatial-image-viewer { border: 0; padding: 0; width: calc(100vw - 24px); max-width: none; max-height: none; height: calc(100dvh - 24px); border-radius: 14px; background: #0c1428; color: #edf7ff; box-shadow: 0 25px 90px rgba(0, 0, 0, .55); overflow: hidden }
+.spatial-image-viewer::backdrop { background: rgba(4, 9, 19, .88); backdrop-filter: blur(6px) }
+.image-viewer-shell { height: 100%; display: flex; flex-direction: column }
+.image-viewer-header { flex: 0 0 auto; padding: 12px 17px; border-bottom: 1px solid rgba(255,255,255,.14); display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 60px }
+.image-viewer-label { font-size: 12px; font-weight: 700; color: #d6e7f8; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0 }
+.image-viewer-actions { flex: 0 0 auto; display: flex; align-items: center; gap: 6px }
+.image-viewer-actions button { width: 36px; height: 36px; border-radius: 8px; border: 1px solid rgba(255,255,255,.14); background: rgba(255,255,255,.065); color: #e2f5fc; font-size: 21px; font-weight: 600 }
+.image-viewer-actions button:hover:not(:disabled), .image-viewer-original:hover { background: rgba(102,231,214,.17); border-color: rgba(102,231,214,.5) }
+.image-viewer-actions button:disabled { opacity: .35; cursor: default }
+.image-viewer-count,.image-viewer-zoom { font-size: 12px; font-weight: 750; color: #b4c9d8; min-width: 46px; text-align: center }
+.image-viewer-separator { width: 1px; height: 23px; background: rgba(255,255,255,.16); margin: 0 5px }
+.image-viewer-original { border: 1px solid rgba(255,255,255,.18); border-radius: 8px; padding: 10px 12px; color: #8ce5dd; font-size: 11px; font-weight: 800; white-space: nowrap }
+.image-viewer-actions .image-viewer-close { font-size: 27px; background: #26344e; margin-left: 5px }
+.image-viewer-stage { flex: 1 1 auto; min-height: 0; overflow: auto; display: flex; align-items: safe center; justify-content: safe center; padding: 16px; outline: 0 }
+.image-viewer-image { display: block; flex: none; max-width: none !important; max-height: none !important; object-fit: contain; border-radius: 5px; height: auto; box-shadow: 0 6px 30px rgba(0,0,0,.3); user-select: none }
+.image-viewer-footer { flex: 0 0 auto; border-top: 1px solid rgba(255,255,255,.12); color: #879bb0; text-align: center; padding: 10px 14px; font-size: 11px }
+@media(max-width:760px) {
+ .spatial-image-viewer { width: 100vw; height: 100dvh; border-radius: 0 }
+ .image-viewer-header { flex-wrap: wrap; padding: 9px 12px; gap: 9px }
+ .image-viewer-label { width: 100%; font-size: 11px }
+ .image-viewer-actions { width: 100%; justify-content: space-between }
+ .image-viewer-actions button { width: 32px; height: 32px; font-size: 18px }
+ .image-viewer-original { padding: 8px; font-size: 10px }
+ .image-viewer-footer { font-size: 10px }
+}
+

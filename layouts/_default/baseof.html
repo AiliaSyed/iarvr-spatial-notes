@@ -7,8 +7,9 @@
   <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ site.Params.description }}{{ end }}">
   <title>{{ if .IsHome }}Spatial Notes — IARVR 2026/27{{ else }}{{ .Title }} · Spatial Notes{{ end }}</title>
   <link rel="icon" href="{{ "images/favicon.svg" | relURL }}" type="image/svg+xml">
-  <link rel="stylesheet" href="{{ "css/site.css" | relURL }}?v=footer-20261115">
+  <link rel="stylesheet" href="{{ "css/site.css" | relURL }}?v=lightbox-20261116">
   <script src="{{ "js/site.js" | relURL }}" defer></script>
+  <script src="{{ "js/image-viewer.js" | relURL }}?v=20261116" defer></script>
 </head>
 <body>
   <div class="read-progress" aria-hidden="true"></div>
