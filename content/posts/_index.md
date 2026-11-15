@@ -1,4 +1,4 @@
 ---
 title: 'Journal'
-description: 'A chronological journal of labs, classroom topics and the main VR project.'
+description: 'A curated journal of reflections, two Unity labs, the Reverse Classroom and the final Parkour Challenge.'
 ---

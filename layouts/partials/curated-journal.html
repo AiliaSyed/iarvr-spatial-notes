@@ -1,0 +1,5 @@
+{{- range slice "/posts/my-first-steps-in-vr" "/posts/unity-and-quest-setup" "/posts/roll-a-ball-in-vr" "/posts/reverse-classroom-preparation" "/project" -}}
+  {{- with site.GetPage . -}}
+    {{- partial "post-card.html" . -}}
+  {{- end -}}
+{{- end -}}

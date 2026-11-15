@@ -1,8 +1,20 @@
 <footer class="site-footer">
-  <div class="container footer-grid">
-    <div><a class="footer-logo" href="{{ "/" | relURL }}">spatial<span>.</span>notes</a><p>A learning journal for the IARVR module at TU Darmstadt. An independent student project, not an official university website.</p></div>
-    <div class="footer-links"><span>EXPLORE</span><a href="{{ "/posts/" | relURL }}">All posts</a><a href="{{ "/labs/" | relURL }}">Course labs</a><a href="{{ "/project/" | relURL }}">Dual-Path Spellcasting</a></div>
-    <div class="footer-links"><span>ELSEWHERE</span><a href="{{ "/about/" | relURL }}">About this journal</a><a href="https://www.tu-darmstadt.de/" target="_blank" rel="noopener">TU Darmstadt ↗</a><a href="https://github.com/AiliaSyed/iarvr-spatial-notes" target="_blank" rel="noopener">GitHub ↗</a></div>
+  <div class="container footer-grid footer-grid-course">
+    <div class="footer-intro">
+      <a class="footer-logo" href="{{ site.Home.RelPermalink }}">spatial<span>.</span>notes</a>
+      <p>A personal XR learning journal by <strong>Ailia Syed</strong>, documenting VR experiments, course assignments and the development of an interaction and locomotion project.</p>
+      <a class="footer-external" href="https://github.com/AiliaSyed/iarvr-spatial-notes" target="_blank" rel="noopener noreferrer">View source on GitHub ↗</a>
+    </div>
+    <div class="footer-course">
+      <span class="footer-heading">COURSE INFORMATION</span>
+      <dl>
+        <dt>Module</dt><dd>Interaction in Virtual and Augmented Reality (IARVR)</dd>
+        <dt>University</dt><dd>TU Darmstadt · Computer Science</dd>
+        <dt>Semester</dt><dd>Winter 2026/27</dd>
+        <dt>Lecturer</dt><dd>Jan Gugenheimer</dd>
+        <dt>Teaching team</dt><dd>Kian Mirbagheri, Yanni Zhang &amp; Yara Hartenstein <small>(per introduction slides)</small></dd>
+      </dl>
+    </div>
   </div>
-  <div class="container footer-bottom"><span>© {{ now.Year }} Spatial Notes · Made to document the process, not just the outcome.</span><span>Built with Hugo + GitHub Pages</span></div>
+  <div class="container footer-bottom"><span>© {{ now.Year }} Spatial Notes · Independent student work; not an official university publication.</span><span>Built with Hugo + GitHub Pages</span></div>
 </footer>
