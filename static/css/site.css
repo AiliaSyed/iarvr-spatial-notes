@@ -88,3 +88,17 @@ html{scroll-padding-top:100px}
   .footer-facts{grid-template-columns:minmax(0,1fr)}
   .footer-facts > div:last-child{grid-column:auto}
 }
+/* Lab 01: optional personal reflection */
+.personal-note{margin:28px 0 36px;border:1px solid #c8dada;border-radius:14px;background:#eff8f7;overflow:hidden}
+.personal-note summary{display:flex;align-items:center;gap:14px;padding:19px 21px;color:#31595d;cursor:pointer;list-style:none;font-size:14px;font-weight:760;line-height:1.5}
+.personal-note summary::-webkit-details-marker{display:none}
+.personal-note summary:hover{background:#e8f4f2}
+.personal-note summary>span:nth-child(2){flex:1;min-width:0}
+.personal-note summary small{display:block;margin-top:3px;color:#6c8789;font-size:11px;font-weight:500}
+.personal-note-icon{font-size:19px;color:#26847d}
+.personal-note-chevron{font-size:26px;transition:transform .2s}
+.personal-note[open] .personal-note-chevron{transform:rotate(180deg)}
+.personal-note-body{padding:0 21px 19px;color:#425b61;font-size:13px;line-height:1.8}
+.personal-note-body p{margin:12px 0}
+.personal-note-body strong{color:#255953}
+@media(max-width:760px){.personal-note summary{padding:17px 15px}.personal-note-body{padding:0 15px 17px}}
