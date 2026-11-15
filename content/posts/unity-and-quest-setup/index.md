@@ -9,6 +9,8 @@ description: 'My first Unity scene, Quest 3S tracking, an unexpected NVIDIA/Meta
 imagecaption: 'Illustration of the Unity development environment, not a screenshot.'
 ---
 
+> **Screenshot tip:** Click any screenshot to open the image viewer, then zoom in or use **Original ↗** to inspect its full resolution. The screenshots below are individual captures from my Unity setup, not reduced multi-image collages.
+
 ## Part I — My first steps with Unity
 
 ### Installation and first impressions
@@ -25,9 +27,13 @@ To get oriented, I followed the beginning of the tutorial [*How To Make a VR Gam
 
 I created a new scene called **Main VR Scene** and added a **Plane** at `(0, 0, 0)` as a simple ground surface. Next, I created a material in the Assets folder and dragged it onto the Plane. I chose green to suggest grass without needing any textures or detailed scenery.
 
-![My initial Unity scene and first green plane](/iarvr-spatial-notes/images/lab01-scene.jpg)
+![Unity 6.3 LTS: the untouched default scene with Main Camera and Directional Light](/iarvr-spatial-notes/images/lab01/initial-scene.webp)
 
-*Figure 1: My empty Unity project and the green Plane with its new material.*
+*Figure 1: My first Unity project, before adding any objects.*
+
+![The green Plane and its Ground Material in the Inspector](/iarvr-spatial-notes/images/lab01/green-plane.webp)
+
+*Figure 2: The Plane after I applied a green material. Both screenshots are provided individually so the editor text can be inspected in detail.*
 
 This was a simple step, but it helped me understand the relationship between **GameObjects, their Transform components, project assets, and materials**. I could now see my first own object in the Scene view instead of an empty grid.
 
@@ -37,13 +43,17 @@ My next goal was to see the Unity scene inside my headset. I installed **Meta Ho
 
 The familiar PC VR environment reminded me of my earlier Oculus Rift S experiences — but unfortunately also brought back an old kind of frustration.
 
+![Connecting the Quest 3S through Meta Horizon Link](/iarvr-spatial-notes/images/lab01/link-connection.webp)
+
+*Figure 3: Meta Horizon Link recognizes my Quest 3S and Touch controllers.*
+
 ### An unexpected graphics-driver problem
 
 During the first wireless Link sessions, the image in the headset sometimes froze or appeared heavily distorted. I even noticed it when trying *Beat Saber*. Meta Horizon Link then displayed a warning about a **known issue involving an NVIDIA graphics driver**, advising a return to driver **591.86 or earlier**.
 
-![Meta Horizon Link setup and NVIDIA driver warning](/iarvr-spatial-notes/images/lab01-link-warning.jpg)
+![Meta Horizon Link's NVIDIA driver compatibility warning](/iarvr-spatial-notes/images/lab01/driver-warning.webp)
 
-*Figure 2: Connecting the Quest 3S to Horizon Link and encountering the driver compatibility warning.*
+*Figure 4: The driver warning in Meta Horizon Link. The text recommends driver version 591.86 or earlier.*
 
 Following the [Meta troubleshooting page](https://www.meta.com/de-de/help/quest/294035639100350/), I opened the [linked NVIDIA driver download](https://www.nvidia.com/en-us/drivers/details/259272/) and installed an older recommended driver version. Afterwards, I retried the connection: the warning did not reappear in that session, the distorted image was gone, and I could play a Beat Saber level without the previous freezing.
 
@@ -67,17 +77,37 @@ At first, pressing Play in Unity did not produce the expected headset experience
 
 I then checked the relevant controller **Interaction Profiles** in the OpenXR settings. For Android, I also enabled the **Meta Quest Support** feature group. Some of these settings showed validation warnings in the Inspector, so the final configuration should still be rechecked before shipping a Quest build.
 
-![OpenXR configured for PC and Quest](/iarvr-spatial-notes/images/lab01-openxr.jpg)
+![Unity XR Plug-in Management before installation](/iarvr-spatial-notes/images/lab01/xr-plugin-install.webp)
 
-*Figure 3: OpenXR plug-in configuration and the Android Meta Quest Support setting.*
+*Figure 5: Installing XR Plug-in Management from Project Settings.*
+
+![OpenXR enabled for the desktop build target](/iarvr-spatial-notes/images/lab01/openxr-desktop.webp)
+
+*Figure 6: The desktop OpenXR provider in Unity Project Settings.*
+
+![Meta Quest Support enabled in Android OpenXR features](/iarvr-spatial-notes/images/lab01/openxr-android.webp)
+
+*Figure 7: The Android OpenXR configuration, including Meta Quest Support.*
 
 After that, I could see the Unity scene in the headset — but the viewpoint initially stayed fixed when I moved my head. Adding a **Tracked Pose Driver (Input System)** component to the camera and configuring its tracking inputs fixed the issue in my test: the camera now responded to my physical headset movements.
+
+![The Main Camera in Unity with its Tracked Pose Driver configuration](/iarvr-spatial-notes/images/lab01/camera-tracking.webp)
+
+*Figure 8: Inspecting the camera's tracking components when headset motion did not initially affect the view.*
 
 ### XR Interaction Toolkit and controller tracking
 
 The next step was installing the **XR Interaction Toolkit**, version **3.3.2**, from **Window → Package Manager → Unity Registry**. I imported its **Starter Assets** sample, which contains useful prefabs and input actions for XR development.
 
+![XR Interaction Toolkit 3.3.2 samples and Starter Assets](/iarvr-spatial-notes/images/lab01/toolkit-samples.webp)
+
+*Figure 9: The XR Interaction Toolkit samples in Unity Package Manager.*
+
 I added an **XR Origin (VR)** to the scene and used it as the new player rig, with the **Tracking Origin Mode** set to **Floor**. This allows the headset's tracked height to be represented relative to the floor. As part of the rig setup, I used a Camera Offset object and child objects for the left and right hands.
+
+![XR Origin settings for the VR Player](/iarvr-spatial-notes/images/lab01/xr-origin.webp)
+
+*Figure 10: The VR Player's XR Origin, configured to use Floor tracking.*
 
 For each hand, I added a **Tracked Pose Driver (Input System)** and connected its **Position**, **Rotation**, and **Tracking State** inputs to the corresponding actions in the Starter Assets:
 
@@ -87,11 +117,21 @@ For each hand, I added a **Tracked Pose Driver (Input System)** and connected it
 | `XRI Left/Rotation` | `XRI Right/Rotation` |
 | `XRI Left/Tracking State` | `XRI Right/Tracking State` |
 
+The left and right tracking references were assigned separately to the matching input actions.
+
+![Unity Tracked Pose Driver setup for the left hand](/iarvr-spatial-notes/images/lab01/controller-actions.webp)
+
+*Figure 11: Mapping the left hand to the corresponding XRI Position, Rotation and Tracking State actions.*
+
 Finally, I placed the supplied controller prefabs under the respective hand objects. Their **Controller Animator** components can animate controller elements from the configured input actions.
 
-![XR Origin and controller prefabs](/iarvr-spatial-notes/images/lab01-controllers.jpg)
+![Controller prefab and Controller Animator settings in Unity](/iarvr-spatial-notes/images/lab01/controller-prefab.webp)
 
-*Figure 4: The XR Origin rig and the imported controller prefabs used for tracking.*
+*Figure 12: The controller prefab and animator input assignments.*
+
+![Both controller models assigned to the XR Player hierarchy](/iarvr-spatial-notes/images/lab01/final-scene.webp)
+
+*Figure 13: My completed first VR rig, with both controllers under their respective hand objects.*
 
 **My first successful test:** When I entered Play Mode and looked through the Quest 3S, I could see my green ground and both virtual controllers. My head movements were also reflected in the view. For a first Unity VR experiment, that felt like a real milestone.
 
