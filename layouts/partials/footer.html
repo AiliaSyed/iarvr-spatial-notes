@@ -2,19 +2,30 @@
   <div class="container footer-grid footer-grid-course">
     <div class="footer-intro">
       <a class="footer-logo" href="{{ site.Home.RelPermalink }}">spatial<span>.</span>notes</a>
-      <p>A personal XR learning journal by <strong>Ailia Syed</strong>, documenting VR experiments, course assignments and the development of an interaction and locomotion project.</p>
-      <a class="footer-external" href="https://github.com/AiliaSyed/iarvr-spatial-notes" target="_blank" rel="noopener noreferrer">View source on GitHub ↗</a>
+      <p>A personal XR learning journal by <strong>Ailia Syed</strong>, documenting VR experiments, practical coursework and the development of a locomotion and interaction project.</p>
+      <div class="footer-note"><span class="footer-spark">✳</span> Exploring, building &amp; reflecting in VR</div>
     </div>
+
     <div class="footer-course">
-      <span class="footer-heading">COURSE INFORMATION</span>
-      <dl>
-        <dt>Module</dt><dd>Interaction in Virtual and Augmented Reality (IARVR)</dd>
-        <dt>University</dt><dd>TU Darmstadt · Computer Science</dd>
-        <dt>Semester</dt><dd>Winter 2026/27</dd>
-        <dt>Lecturer</dt><dd>Jan Gugenheimer</dd>
-        <dt>Teaching team</dt><dd>Kian Mirbagheri, Yanni Zhang &amp; Yara Hartenstein <small>(per introduction slides)</small></dd>
-      </dl>
+      <span class="footer-heading">THE COURSE</span>
+      <strong class="footer-module-name">Interaction in Virtual and Augmented Reality <span>(IARVR)</span></strong>
+      <div class="footer-facts">
+        <div><span>UNIVERSITY</span><strong>TU Darmstadt · Computer Science</strong></div>
+        <div><span>SEMESTER</span><strong>Winter 2026/27</strong></div>
+        <div><span>LECTURER</span><strong>Jan Gugenheimer</strong></div>
+        <div><span>TEACHING TEAM</span><strong>Kian Mirbagheri, Yanni Zhang &amp; Yara Hartenstein</strong></div>
+      </div>
     </div>
+
+    <nav class="footer-links footer-resources" aria-label="Footer resources">
+      <span class="footer-heading">LINKS &amp; RESOURCES</span>
+      <a href="{{ with site.GetPage "/about" }}{{ .RelPermalink }}{{ end }}">About this journal <span aria-hidden="true">↗</span></a>
+      <a href="https://www.tu-darmstadt.de/" target="_blank" rel="noopener noreferrer">TU Darmstadt <span aria-hidden="true">↗</span></a>
+      <a href="https://github.com/AiliaSyed/iarvr-spatial-notes" target="_blank" rel="noopener noreferrer">GitHub repository <span aria-hidden="true">↗</span></a>
+    </nav>
   </div>
-  <div class="container footer-bottom"><span>© {{ now.Year }} Spatial Notes · Independent student work; not an official university publication.</span><span>Built with Hugo + GitHub Pages</span></div>
+  <div class="container footer-bottom">
+    <span>© {{ now.Year }} Spatial Notes · Independent student work; not an official university publication.</span>
+    <span>Built with Hugo + GitHub Pages</span>
+  </div>
 </footer>
