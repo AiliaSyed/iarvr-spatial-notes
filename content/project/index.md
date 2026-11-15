@@ -1,48 +1,74 @@
 ---
-title: 'Dual-Path Spellcasting'
-date: '2026-11-09T10:00:00+01:00'
+title: 'Parkour Challenge: E-Scooter & Telekinesis'
+date: '2026-11-15T20:00:00+01:00'
 category: 'Final Project'
-description: 'A VR interaction research prototype turning quick-time events into timed, bimanual path tracing in three-dimensional space.'
-cover: 'images/spellcasting-hero.svg'
-imagecaption: 'Concept art of the planned interaction, not a screenshot of working software.'
+description: 'My planned IARVR final project: an e-scooter locomotion technique and spell-activated telekinetic object manipulation in the course parkour.'
+cover: 'images/parkour-hero.svg'
+imagecaption: 'Early concept illustration. No finished Unity implementation is shown.'
 ---
 
-## Research idea
+## The actual course project
 
-Inspired by *osu!*, *Beat Saber*, quick-time events and the spell gestures in *Hogwarts Mystery*, this project examines whether **timed two-handed path tracing** can create engaging, usable VR interaction.
+After discussing the requirements with the course team, I learned that **Lab 02's Parkour Challenge is the final project**. It requires an original **locomotion technique** and an **object interaction technique** inside the provided Unity parkour scene. I no longer need to build the separate spellcasting survival game I originally pitched.
 
-## How it works
+Rather than discarding the interesting part of that idea, I want to adapt its motion-based interaction to the course environment.
 
-The player selects one of four spells with the Quest controller face buttons. Two glowing, spatially positioned paths appear in front of the player. Holding the index-finger triggers activates tracing; Grip presses at designated checkpoints validate milestones while the paths are followed.
+**Current status:** Planning and concept development. Lab 01 and the parkour implementation still need to be completed and documented.
 
-- Both hands can progress independently, without enforced synchronization.
-- The paths can move through **depth**, not just up, down, left and right.
-- A shared countdown imposes time pressure.
-- A mistake resets the entire spell.
+## Locomotion — a virtual e-scooter
 
-## Planned gameplay
+My idea is to travel through the course using a **virtual e-scooter**:
 
-The player remains in a small VR arena. Simple enemies approach from different directions. Successfully completing a spell allows the player to attack; an enemy reaching the player costs one life. The session ends after three lost lives.
+- Step onto a stationary virtual scooter.
+- Hold the virtual handlebars with the controllers.
+- Use a simple input to accelerate or brake.
+- Steer by moving or turning the handlebars.
+- Navigate curves, obstacles, banners and coin routes.
 
-## Implementation roadmap
+The player remains physically in a safe, stationary play area. The exact handling, speed limits and comfort measures need to be tested.
 
-1. **Input & XR setup:** Test controller Trigger, Grip and tracking.
-2. **Single path:** Implement continuous progress, tolerances and visual feedback.
-3. **Two hands:** Independent path validation with one shared timer.
-4. **Spells & effects:** Configure four patterns and simple visual outcomes.
-5. **Enemies & game loop:** Add basic enemies, health and game-over logic.
-6. **Evaluation:** Measure completion times, errors, retries and subjective workload.
+## Object interaction — spell-activated telekinesis
 
-## Early visualization
+At the parkour's object interaction stations, I want to activate **telekinesis** by completing a short, two-handed path-tracing gesture. Triggers and selected Grip checkpoints provide the input.
 
-![Concept illustration of the VR path-tracing interaction](/iarvr-spatial-notes/images/spellcasting-hero.svg)
+Once activated, telekinesis allows me to manipulate the required objects at a distance:
 
-*Illustrative concept artwork created before implementation. The final 3D paths will extend in depth.*
+- **Right hand:** Rotate the selected object.
+- **Left hand:** Move the object sideways.
+- **Both hands:** Coordinate positioning and rotation to solve a station task.
 
-## Evaluation direction
+How to control height and depth, and how to map the controls to the actual station goals, is still open. That decision will be made after inspecting the existing parkour scene and its objects.
 
-A potential question is how different degrees of path complexity affect performance, accuracy and perceived effort. The final experimental design will be defined after the interaction works reliably.
+This is **one object interaction system** with a spell-like activation step, not a separate game with four spells, enemies or lives.
 
-## AI-assisted development
+## Proposed interaction flow
 
-ChatGPT Codex may help write and explain C# scripts, diagnose errors and produce simple textures or visual assets. Design decisions, code understanding, testing and evaluation remain my responsibility.
+1. Ride the scooter toward an object task.
+2. Stop and release the handlebars to enter interaction mode.
+3. Perform a brief path-tracing gesture to activate telekinesis.
+4. Manipulate the object with both hands until the station goal is satisfied.
+5. Return to the scooter and continue along the course.
+
+## Development plan
+
+1. **Lab 01:** Get familiar with Unity and Meta Quest 3S development.
+2. **Inspect the provided parkour:** Identify object tasks, relevant scripts and navigation restrictions.
+3. **Implement scooter locomotion:** Build simple handlebars, movement, turning and stop/start behavior.
+4. **Implement object manipulation:** Test object selection, rotation and translation before adding gestures.
+5. **Add spell activation:** Implement short 3D paths and reliable checkpoint detection.
+6. **Integrate and test:** Run the full course, check usability and comfort, and record timings and observations.
+7. **Document and reflect:** Explain design changes, code, experiments, problems and test outcomes.
+
+## Why this direction interests me
+
+My first VR experiences taught me how much comfort and reliable input can shape an otherwise enjoyable experience. Here I can experiment with both: a more physical way of navigating and a coordinated, two-handed way of manipulating objects.
+
+The most important goal is not visual complexity. It is to design techniques that are understandable, controllable and practical to evaluate in the parkour.
+
+## Credits and development approach
+
+The parkour scene is provided by the course team: [VR Locomotion Parkour](https://github.com/teamdarmstadt/VR-locomotion-parkour).
+
+I may use ChatGPT Codex for explanations, C# assistance and debugging. The design decisions, understanding of the implementation, practical testing and evaluation are my own responsibility.
+
+*This page describes planned functionality. I will replace or extend it with implementation evidence as the project develops.*

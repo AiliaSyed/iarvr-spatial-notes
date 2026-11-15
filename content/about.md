@@ -7,11 +7,15 @@ description: 'An independent student learning journal focused on virtual reality
 
 ## Hello, I'm Ailia
 
-I study Computer Science at TU Darmstadt and enjoy building interactive digital experiences. Previous projects include VR and serious games; I'm especially interested in how people interact with virtual environments.
+I study Computer Science at TU Darmstadt and enjoy building interactive digital experiences. Previous projects include VR and serious games; I'm especially interested in how people interact with virtual environments. I spent a long time playing on an Oculus Rift S and recently started exploring the standalone Meta Quest 3S. That change has made me more curious about comfort, tracking and interaction design.
 
 ## About the module
 
 **Interaction in Virtual and Augmented Reality (IARVR)** explores VR technologies, interaction techniques and human-computer interaction through lectures, hands-on labs and project work.
+
+## Current course project
+
+For IARVR's final Parkour Challenge, I plan to experiment with e-scooter locomotion and spell-activated telekinetic object manipulation. This is a concept in progress, not a completed build.
 
 ## Why document everything?
 

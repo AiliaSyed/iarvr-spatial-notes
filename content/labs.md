@@ -17,7 +17,7 @@ Convert a simple physics-based ball game into a VR experience and practice grabb
 
 ## Lab 02 — Parkour Challenge
 
-Work with the provided parkour scene, design a locomotion interaction and reflect on trade-offs between speed, control, fatigue and comfort.
+The instructor confirmed this as the main project: implement **one locomotion technique and one object interaction technique** in the provided parkour scene. My current concepts are an e-scooter for movement and gesture-activated telekinesis for manipulating objects. These are still plans, not completed implementations.
 
 ## Documentation principles
 

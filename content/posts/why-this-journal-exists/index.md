@@ -24,7 +24,8 @@ The website is built with **Hugo**, written in Markdown, versioned with Git and 
 
 - **Labs:** Practical tasks and technical lessons
 - **Reverse Classroom:** Research, presentation and reflection
-- **Final Project:** Dual-Path Spellcasting from concept to evaluation
+- **Final Project:** A parkour challenge combining e-scooter locomotion with telekinetic object manipulation
+- **Reflections:** My experiences with VR hardware, comfort, tracking and interaction design
 
 ## Next steps
 

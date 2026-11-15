@@ -1,8 +1,26 @@
 # Spatial Notes — IARVR Learning Journal
 
-An English-language development journal for **Interaction in Virtual and Augmented Reality** (TU Darmstadt, winter semester 2026/27).
+An English-language learning and development journal for **Interaction in Virtual and Augmented Reality** at TU Darmstadt (winter semester 2026/27).
 
-The website documents Unity labs, the Reverse Classroom, and the **Dual-Path Spellcasting** VR research project.
+This public website documents personal VR reflections, Unity labs, the Reverse Classroom, and the course's **Parkour Challenge** — an e-scooter locomotion technique paired with spell-activated telekinetic object manipulation.
+
+## Publishing posts
+
+Create a new Markdown file in `content/posts/<slug>/index.md`. Add front matter such as:
+
+```yaml
+---
+title: 'Example: My next lab'
+date: '2026-11-15T20:00:00+01:00'
+draft: true
+category: 'Labs'
+status: 'Draft'
+cover: 'images/unity.svg'
+description: 'What this lab covers.'
+---
+```
+
+Document objectives, approach, technical details, screenshots, actual results, challenges and reflections. Set `draft: false` to publish the post.
 
 ## Local development
 
@@ -14,8 +32,8 @@ hugo server -D
 
 ## Deployment
 
-The repository contains a GitHub Actions workflow that builds and deploys the Hugo site. In **Settings → Pages**, set the build source to **GitHub Actions**.
+Push commits to `main`. GitHub Actions automatically builds and deploys the Hugo site when GitHub Pages is enabled and configured to use GitHub Actions.
 
-Public website (once enabled): https://AiliaSyed.github.io/iarvr-spatial-notes/
+Website: https://ailiasyed.github.io/iarvr-spatial-notes/
 
-Course notes distinguish plans and ideas from completed implementations and verified results.
+**Editorial rule:** Distinguish experiences and ideas from actual implementations and measured results. Do not claim incomplete exercises or unverified performance comparisons as facts.

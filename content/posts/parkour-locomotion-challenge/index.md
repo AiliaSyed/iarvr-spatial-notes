@@ -1,25 +1,34 @@
 ---
-title: 'Lab 02: Parkour and Locomotion Challenge'
+title: 'Lab 02: Preparing the Parkour Challenge'
 date: '2026-11-03T10:00:00+01:00'
 draft: false
 category: 'Labs'
-status: 'Lab task / Notes'
+status: 'Assignment & early ideas'
 cover: 'images/parkour.svg'
-description: 'Planning a custom VR movement technique and documenting control, speed and comfort trade-offs.'
+description: 'The assigned parkour scene, its locomotion and interaction requirements, and early design directions before implementation.'
 ---
 
-## The challenge
+## The assignment
 
-The course provides a parkour scene with a route, coins, banners and object-interaction tasks. The objective is to implement an original locomotion approach in the provided Unity project.
+The course provides a VR parkour environment with a route, coins, banners and object-interaction stations. According to the course discussion, this challenge is also the **final project**: implement a locomotion technique **and** an object interaction technique in the provided Unity scene.
 
-## Course resources
+The course scene is available in the [VR Locomotion Parkour repository](https://github.com/teamdarmstadt/VR-locomotion-parkour).
 
-The lab references the [VR Locomotion Parkour repository](https://github.com/teamdarmstadt/VR-locomotion-parkour). Its slides describe locomotion examples such as teleportation, grabbing the air and walking in place.
+## My first design directions
 
-## Proposed experimentation
+For locomotion I am considering a **virtual e-scooter**: take hold of the handlebars, accelerate and steer through the course without moving around physically.
 
-Compare candidate controls by considering travel time, precision, fatigue and cybersickness. Document each iteration with code notes and short headset recordings.
+For object interactions I am exploring **spell-activated telekinesis**. A short path-tracing gesture would enable remote manipulation: the right hand for rotation and the left for lateral movement. The required controls for height and depth will be decided after reviewing the tasks in Unity.
+
+## What needs to be investigated
+
+- How does the existing parkour scene implement movement and object tasks?
+- Can the scooter provide adequate control on curves while remaining comfortable?
+- Can the telekinesis controls satisfy all station tasks?
+- How should the user switch between riding and object interaction?
 
 ## Implementation record
 
-*Placeholder for the actual selected locomotion technique, its code, tests and results. This example article does not claim the challenge has been completed.*
+*Not completed yet. I will document scene inspection, scripts, actual tests, screenshots, problems and evaluation once I start working on the parkour.*
+
+The course also asks us to report travel time and collected coins; those measurements can help evaluate the chosen locomotion technique.
