@@ -12,7 +12,7 @@ description: 'From a shaky headset mirror to a smoothed first-person spectator v
 
 ## 1. Tutorial — What I wanted to learn
 
-For my IARVR **Reverse Classroom** assignment, I chose the video [*How To Make a VR Spectator Camera – Unity VR Tutorial*](https://www.youtube.com/watch?v=4Z52P6jbSlE), by Valem. I followed the tutorial in Unity and built both camera setups myself.
+For my IARVR **Reverse Classroom** assignment, I was **assigned** the topic [*How To Make a VR Spectator Camera – Unity VR Tutorial*](https://www.youtube.com/watch?v=4Z52P6jbSlE), by Valem. I followed the assigned tutorial in Unity and built both camera setups myself.
 
 When someone plays a VR game, their headset view is tailored to them: the camera responds immediately to even tiny head movements. But people watching from a desktop monitor, a stream, or a recorded video have different needs. The normal mirrored VR view can look **jittery or uncomfortable to watch**, even when those tiny movements are not noticeable to the person wearing the headset. And a first-person view does not always show what the player's body or hands are doing.
 
@@ -43,9 +43,11 @@ Before adding a separate spectator camera, I recorded the ordinary mirrored VR o
 
 Importantly, **I did not perceive the same problem inside the VR headset**. My observation was about the desktop recording, not evidence that the headset tracking itself was malfunctioning. I did not measure jitter numerically; the following clip is the visual baseline for my comparison.
 
-![Screenshot of the original Unity headset-mirror recording](/iarvr-spatial-notes/images/reverse-classroom/problem-poster.webp)
+**Video — The problem before smoothing:** The original mirrored headset view in Unity.
 
-*Figure — The original mirrored output in Unity. The full motion recording is embedded in the Demonstration section below.*
+{{< spectator-video src="images/reverse-classroom/the-problem.mp4" poster="images/reverse-classroom/problem-poster.webp" label="Before / Original headset mirror" caption="The Problem.mp4 — the ordinary desktop mirror before adding any spectator-camera smoothing." >}}
+
+*The video shows my initial observation in the Unity test scene; I did not measure the amount of jitter quantitatively.*
 
 ### 2.3 Creating the smoothed spectator camera
 
@@ -139,9 +141,11 @@ There are two technical limitations worth remembering for future projects. First
 
 I started the scene again through Meta Horizon Link and recorded the desktop spectator output. The motion appeared **noticeably steadier** than the original headset mirror, and the camera followed the view with a slight delay rather than reacting to every tiny motion at once.
 
-![Screenshot of the smoothed spectator view in Unity](/iarvr-spatial-notes/images/reverse-classroom/smooth-poster.webp)
+**Video — The view after adding SmoothFollow.cs:** Compare the camera motion with the recording in section 2.2.
 
-*Figure — The new spectator view. The full movement comparison can be watched in the Demonstration section below.*
+{{< spectator-video src="images/reverse-classroom/smooth-follow.mp4" poster="images/reverse-classroom/smooth-poster.webp" label="After / Smoothed spectator view" caption="SmoothFollowCamera.mp4 — the desktop spectator view after adding positional and rotational interpolation." >}}
+
+*This is a visual before-and-after comparison, not a controlled quantitative measurement.*
 
 For a controlled comparison in the future, I could use the same scripted movement and record quantitative image-motion measurements. For this lab, the before/after videos provide a **visual demonstration rather than a measured scientific result**.
 
@@ -195,23 +199,17 @@ To display the Render Texture in the desktop output, I created a **Canvas** and 
 
 A possible complication is **camera feedback**: if the external camera renders the quad that already displays its own output, a screen-inside-a-screen effect may occur. A more refined project should place the quad outside the capture or exclude its layer from the spectator camera using the **Culling Mask**.
 
-## 3. Demonstration — Both approaches in action
+## 3. Demonstration — Comparing the three views
 
-I recorded three short Unity sessions. Together they show the problem, the smoothed first-person solution, and the third-person camera output. The embedded files are web-optimized, **silent copies** of my original recordings; I retained the full-size source clips separately.
+I recorded three short Unity sessions, with each recording placed next to the implementation step it demonstrates. The original mirrored headset output appears in **section 2.2**, and the smoothed first-person view in **section 2.5**. The videos are web-optimized, silent copies of my original recordings; I retained the full-size source clips separately.
 
-**Original mirrored headset view:**
+### Third-person spectator view in action
 
-{{< spectator-video src="images/reverse-classroom/the-problem.mp4" poster="images/reverse-classroom/problem-poster.webp" label="1 / Initial spectator view" caption="Original recording: The Problem.mp4" >}}
+This final video shows the external camera view and the simple representation of the VR player. I turn around to demonstrate how the scene can be observed from outside the player's first-person perspective.
 
-**Smoothed first-person spectator view:**
+{{< spectator-video src="images/reverse-classroom/third-person.mp4" poster="images/reverse-classroom/third-person-poster.webp" label="Third-person spectator camera" caption="ThirdPersonCam.mp4 — external view of the player representation in my Unity prototype." >}}
 
-{{< spectator-video src="images/reverse-classroom/smooth-follow.mp4" poster="images/reverse-classroom/smooth-poster.webp" label="2 / Smoothed spectator view" caption="Original recording: SmoothFollowCamera.mp4" >}}
-
-**Third-person spectator view:**
-
-{{< spectator-video src="images/reverse-classroom/third-person.mp4" poster="images/reverse-classroom/third-person-poster.webp" label="3 / Third-person spectator camera" caption="Original recording: ThirdPersonCam.mp4. I turn to show how the player's representation looks from the external viewpoint." >}}
-
-These are recordings of my **small test scene**, not of the final Parkour Challenge. In particular, the third-person camera is currently an external viewpoint; I have **not yet added an automatic follow/orbit controller** for a moving scooter player.
+All three recordings come from my **small test scene**, not the final Parkour Challenge. The third-person camera is currently an external viewpoint; I have **not yet added an automatic follow/orbit controller** for a moving scooter player.
 
 ## 4. Experience — What went well, and what did not
 
