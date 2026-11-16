@@ -1,9 +1,10 @@
 ---
 title: 'Lab 01: From an Empty Unity Scene to XR and Agentic Coding'
 date: '2026-11-15T23:00:00+01:00'
+lastmod: '2026-11-16T01:00:00+01:00'
 draft: false
 category: 'Labs'
-status: 'XR setup tested · coding-agent work next'
+status: 'XR tracking tested · MCP installed · coding-agent practice next'
 cover: 'images/unity.svg'
 description: 'My first Unity scene, Quest 3S tracking, an unexpected NVIDIA/Meta Link issue, and how ChatGPT helped me shape my parkour ideas.'
 imagecaption: 'Illustration of the Unity development environment, not a screenshot.'
@@ -135,6 +136,20 @@ Finally, I placed the supplied controller prefabs under the respective hand obje
 
 **My first successful test:** When I entered Play Mode and looked through the Quest 3S, I could see my green ground and both virtual controllers. My head movements were also reflected in the view. For a first Unity VR experiment, that felt like a real milestone.
 
+### A small tracking mistake: Poke Position versus Position
+
+Later, while preparing a separate VR scene for the **Reverse Classroom spectator-camera tutorial**, I encountered a confusing issue: **the left controller model remained near the floor** instead of following my left hand, while the right controller behaved normally.
+
+I inspected the **Tracked Pose Driver (Input System)** on `Left Hand`. Its tracking mode and update type looked correct, but I had accidentally chosen **`XRI Left/Poke Position`** for the *Position Input* instead of the intended **`XRI Left/Position`**.
+
+![Unity Input Action Reference selector listing several similar XRI Left position actions](/iarvr-spatial-notes/images/lab01/tracking-input-mistake.png)
+
+*Figure: When filtering for "xri left/p", several entries look similar. The correct controller tracking reference in my rig is **XRI Left/Position**, not **XRI Left/Poke Position**.*
+
+It was a **simple configuration oversight**, but it made the issue look like a much larger XR tracking problem. Once I identified the wrong action and selected the intended pose input, there was no reason to reinstall the XR packages. This reminded me to compare action references carefully—especially when several options have almost identical names.
+
+I also used ChatGPT to narrow down the investigation: rather than changing multiple settings at once, I compared the left and right input assignments and traced the problem to one field. This is an example of **AI-assisted debugging advice**, not a claim that a coding agent automatically diagnosed or fixed the Unity scene.
+
 One follow-up for my next session: in some editor screenshots the original scene camera and the camera inside the XR rig are both listed. I will check that only the intended camera and Audio Listener remain active, rather than assuming the rig is already configured perfectly.
 
 > **Scope of the test:** This confirms the basic setup I observed through Meta Horizon Link and Unity Play Mode. I have not yet documented a standalone Android APK build or a complete interaction mechanic.
@@ -156,9 +171,47 @@ My tool setup at the time of writing:
 | Visual Studio Code | Intended editor for C# scripts |
 | ChatGPT desktop + Codex | Connected to the local project folder; so far used primarily for exploration and planning |
 | GitHub / Spatial Notes | Versioned documentation through Hugo and GitHub Pages |
-| MCP, agent skills and project instruction files | Specific servers, skills and rules still to be documented when I configure the coding workflow |
+| Unity MCP integration | MCP for Unity 10.3.0 installed; the setup wizard detected Codex as a client; a successful live agent-to-editor tool session has not yet been documented |
 
 I have **not yet implemented my parkour techniques with Codex**. This entry records the design phase; actual agent-written code, model identifiers, exact prompts, diffs, test logs and timing measurements will be covered when I start hands-on work in the next lab.
+
+### Installing MCP for Unity
+
+To prepare for real agentic coding, I decided to connect Codex more closely to the running Unity editor rather than relying solely on exchanging code snippets and screenshots in chat.
+
+I opened **Unity → Window → Package Manager → Add package from git URL** and installed [MCP for Unity](https://github.com/CoplayDev/unity-mcp) by Coplay:
+
+```text
+https://github.com/CoplayDev/unity-mcp.git?path=/MCPForUnity#main
+```
+
+![Installing MCP for Unity through the Git URL in Unity Package Manager](/iarvr-spatial-notes/images/lab01/mcp-package-install.png)
+
+*Figure: Installing the Unity MCP integration with the Git URL in Package Manager.*
+
+After installation, **MCP for Unity version 10.3.0** appeared in the project's package list.
+
+![Package Manager showing MCP for Unity 10.3.0 installed](/iarvr-spatial-notes/images/lab01/mcp-package-installed.png)
+
+*Figure: MCP for Unity 10.3.0 listed as an installed Git package.*
+
+The setup wizard checked the required local tools. In my environment it detected **Python 3.14.2**, **uv 0.11.8** and **Git 2.54.0.windows.1**, and reported that all requirements were met.
+
+![MCP Setup wizard showing Python, uv and Git available](/iarvr-spatial-notes/images/lab01/mcp-system-requirements.png)
+
+*Figure: The setup wizard verifies the local dependencies before configuring a client.*
+
+The next screen detected **CodeBuddy CLI**, **Codex** and **VS Code GitHub Copilot** as possible clients. I selected Codex for the configuration step.
+
+![MCP Setup showing Codex and other detected clients](/iarvr-spatial-notes/images/lab01/mcp-client-selection.png)
+
+*Figure: Codex is among the MCP clients detected by the setup wizard.*
+
+**What this confirms:** The MCP package was installed in Unity and the wizard found the necessary tools and Codex client. These screenshots alone do **not** demonstrate that Codex has already called Unity tools successfully or edited and tested a Unity scene. Verifying that end-to-end connection, documenting the exact model and agent permissions, and recording a concrete code change will be part of the next practical exercise.
+
+### Why the MCP setup matters
+
+A normal chat can help me reason about a problem, but a properly connected coding agent can potentially inspect the project structure, scene components and diagnostic output directly, subject to the tools and permissions available. I want to use that capability carefully: **plan first, inspect the proposed changes, test inside Unity, and keep a record of what the agent did versus what I verified myself**.
 
 ### From game inspiration to project ideas
 
