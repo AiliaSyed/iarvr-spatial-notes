@@ -1,7 +1,7 @@
 ---
 title: 'Reverse Classroom: Building a VR Spectator Camera in Unity'
 date: '2026-11-16T02:00:00+01:00'
-lastmod: '2026-11-16T02:00:00+01:00'
+lastmod: '2026-11-16T04:31:34+01:00'
 draft: false
 category: 'Reverse Classroom'
 status: 'Implementation and presentation completed'
@@ -263,9 +263,9 @@ More importantly, I can now distinguish **what the player needs to see** from **
 
 ## Presentation — Slide deck
 
-I turned this implementation journal into a **12-slide English Reverse Classroom presentation**. The slides cover the assigned tutorial, my Unity implementation, demonstrations, problems and solutions, learnings, and how I might use the techniques in my Parkour end project.
+I turned this implementation journal into a **13-slide English Reverse Classroom presentation**. The slides cover the assigned tutorial, my Unity implementation, demonstrations, problems and solutions, learnings, and how I might use the techniques in my Parkour end project.
 
-The PowerPoint contains **presenter notes** and all three short demo videos embedded on the relevant slides. The PDF below is a convenient browser-readable version; it shows still frames instead of playing the videos.
+The PowerPoint contains **presenter notes** and embedded demo videos on the relevant slides. The PDF below is a convenient browser-readable version; it shows still frames instead of playing the videos.
 
 {{< spectator-slides pdf="files/reverse-classroom/VR_Spectator_Camera.pdf" pptx="files/reverse-classroom/VR_Spectator_Camera.pptx" >}}
 

@@ -29,8 +29,8 @@ jobs:
           mkdir -p static/files/reverse-classroom
           cat assets/presentations/reverse-classroom.pptx.b64.part* | base64 --decode > static/files/reverse-classroom/VR_Spectator_Camera.pptx
           cat assets/presentations/reverse-classroom.pdf.b64.part* | base64 --decode > static/files/reverse-classroom/VR_Spectator_Camera.pdf
-          echo "9faf2d87bc31b66f154c9f9f689ba1b237e4028af35c951980ee65753c194197  static/files/reverse-classroom/VR_Spectator_Camera.pptx" | sha256sum --check
-          echo "08fe99258fcb3a10152df43ecc52ef708b17d0038ffda3d166e830b7280ca1d0  static/files/reverse-classroom/VR_Spectator_Camera.pdf" | sha256sum --check
+          echo "872a265a6083235de6142c2f8969ad7ae81e73ff5ac9a809b729f0937aca6962  static/files/reverse-classroom/VR_Spectator_Camera.pptx" | sha256sum --check
+          echo "ac69cf72ea5962ae0277c08b4ead31dcd768aac85d07bc0d8d36ce8c4a337b7e  static/files/reverse-classroom/VR_Spectator_Camera.pdf" | sha256sum --check
       - name: Build site
         run: hugo --minify
       - name: Configure GitHub Pages
