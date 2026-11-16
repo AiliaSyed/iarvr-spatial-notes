@@ -1,0 +1,13 @@
+{{- $url := .Get "src" | relURL -}}
+{{- $poster := .Get "poster" | relURL -}}
+<figure class="rc-video">
+  <div class="rc-video-header">
+    <span class="rc-video-eyebrow">UNITY XR · OWN IMPLEMENTATION</span>
+    <strong>{{ .Get "label" }}</strong>
+  </div>
+  <video controls playsinline preload="metadata" poster="{{ $poster }}" aria-label="{{ .Get "label" }}" controlsList="nodownload">
+    <source src="{{ $url }}" type="video/mp4">
+    Your browser cannot play this video. <a href="{{ $url }}">Open the recording</a>.
+  </video>
+  <figcaption>{{ .Get "caption" }} <a href="{{ $url }}" target="_blank" rel="noopener noreferrer">Open video ↗</a></figcaption>
+</figure>

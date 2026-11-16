@@ -1,18 +1,19 @@
 ---
-title: 'Reverse Classroom'
-date: '2026-11-09T10:00:00+01:00'
+title: 'Reverse Classroom — VR Spectator Camera'
+date: '2026-11-16T02:00:00+01:00'
 category: 'Reverse Classroom'
-description: 'Research, preparation, demonstration and reflection from the IARVR Reverse Classroom.'
-cover: 'images/classroom.svg'
-imagecaption: 'Original illustration of XR learning and teaching'
+description: 'Hands-on implementation of a smoothed first-person spectator camera and a third-person camera using Render Textures.'
+cover: 'images/reverse-classroom/third-person-poster.webp'
 ---
 
-## The idea
+## My selected topic
 
-The Reverse Classroom format shifts part of the learning experience to the students: research a topic, make it understandable to others, and present concrete examples or a demonstration.
+I chose [How To Make a VR Spectator Camera — Unity VR Tutorial](https://www.youtube.com/watch?v=4Z52P6jbSlE) for my Reverse Classroom session.
 
-## Preparation
+I implemented two camera approaches in Unity 6.3 LTS: a smoothed first-person spectator view and an external third-person camera displayed through a Render Texture and a Raw Image.
 
-*The chosen topic and specific presentation details still need to be added.*
+**[Read the full tutorial, implementation journal, code and recordings]({{< relref "/posts/reverse-classroom-preparation" >}})**
 
-Planned documentation: learning objectives, sources, presentation visuals, demo code, feedback and a brief reflection.
+## Presentation
+
+I will add the presentation here after preparing and reviewing it. The [detailed journal entry]({{< relref "/posts/reverse-classroom-preparation" >}}) already includes the recorded demos.

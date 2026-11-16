@@ -139,3 +139,15 @@ html{scroll-padding-top:100px}
  .image-viewer-footer { font-size: 10px }
 }
 
+
+
+/* Reverse Classroom: native, responsive, accessible tutorial video embeds */
+.rc-video{margin:32px 0 37px;overflow:hidden;border-radius:14px;border:1px solid #dce4ed;background:#0d172c;box-shadow:0 13px 30px rgba(20,32,54,.08)}
+.rc-video-header{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:15px 18px;color:#e8f3fc}
+.rc-video-eyebrow{color:#78e0d5;font-size:9px;font-weight:850;letter-spacing:.12em}
+.rc-video-header strong{font-size:13px;font-weight:750}
+.rc-video video{display:block;width:100%;max-height:68vh;aspect-ratio:16 / 9;object-fit:contain;background:#070d18}
+.rc-video figcaption{margin:0;padding:12px 17px 15px;color:#b9c8d8;font-size:11px;line-height:1.65}
+.rc-video figcaption a{display:inline-block;margin-left:7px;color:#89e9db;font-size:11px;text-decoration:underline;text-underline-offset:3px}
+.prose img{height:auto;max-height:none}
+@media (max-width:760px){.rc-video{margin:24px 0 29px}.rc-video-header{padding:12px 13px}.rc-video figcaption{padding:10px 13px;font-size:10px}.rc-video video{max-height:50vh}}
