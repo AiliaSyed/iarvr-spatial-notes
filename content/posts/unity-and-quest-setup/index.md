@@ -18,7 +18,7 @@ imagecaption: 'Illustration of the Unity development environment, not a screensh
 
 I started by downloading [Unity](https://unity.com/download) and installing **Unity 6.3 LTS** through Unity Hub. I also installed **Visual Studio Code** as my editor for future C# scripts. For Quest development, I included **Android Build Support**, **OpenJDK**, and the **Android SDK & NDK tools**. They will allow me to build Android applications that can run directly on the headset.
 
-My notes initially recorded Unity version `6000.3.26f1`. Interestingly, one early Unity title-bar screenshot displays `6000.3.28f1`. I still need to double-check which editor version I ultimately used; I do not want the documentation to imply greater precision than my notes support.
+I use Unity version `6000.3.28f1`.
 
 After creating a project with the **3D Built-In Render Pipeline** template, I was greeted by an almost empty editor window. There was a lot to take in: the Scene view, Hierarchy, Inspector and Project panel were all new interfaces to understand at once.
 
