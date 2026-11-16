@@ -4,7 +4,7 @@ date: '2026-11-16T02:00:00+01:00'
 lastmod: '2026-11-16T02:00:00+01:00'
 draft: false
 category: 'Reverse Classroom'
-status: 'Both camera prototypes tested · Presentation next'
+status: 'Implementation and presentation completed'
 cover: 'images/reverse-classroom/third-person-poster.webp'
 imagecaption: 'Frame from my own Unity third-person spectator recording; this is a prototype, not final gameplay.'
 description: 'From a shaky headset mirror to a smoothed first-person spectator view and an external third-person camera — implementation, code, videos, problems, and ideas for my Parkour Challenge.'
@@ -261,9 +261,13 @@ I started with a shaky mirrored VR view and ended with two useful approaches for
 
 More importantly, I can now distinguish **what the player needs to see** from **what an audience needs to see**. I expect that distinction to be helpful when I record and present my end project.
 
-## Presentation — Coming next
+## Presentation — Slide deck
 
-My Reverse Classroom presentation will summarize the tutorial, the implementation steps, the three demonstrations, the problems I encountered, my learnings and practical applications for the Parkour Challenge. **I will add the actual slide deck here after creating and reviewing it.**
+I turned this implementation journal into a **12-slide English Reverse Classroom presentation**. The slides cover the assigned tutorial, my Unity implementation, demonstrations, problems and solutions, learnings, and how I might use the techniques in my Parkour end project.
+
+The PowerPoint contains **presenter notes** and all three short demo videos embedded on the relevant slides. The PDF below is a convenient browser-readable version; it shows still frames instead of playing the videos.
+
+{{< spectator-slides pdf="files/reverse-classroom/VR_Spectator_Camera.pdf" pptx="files/reverse-classroom/VR_Spectator_Camera.pptx" >}}
 
 ## Resources
 

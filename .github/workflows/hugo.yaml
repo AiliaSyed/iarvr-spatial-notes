@@ -22,6 +22,15 @@ jobs:
         run: |
           wget -q -O "${{ runner.temp }}/hugo.deb" "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb"
           sudo dpkg -i "${{ runner.temp }}/hugo.deb"
+      - name: Reconstruct Reverse Classroom presentation downloads
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p static/files/reverse-classroom
+          cat assets/presentations/reverse-classroom.pptx.b64.part* | base64 --decode > static/files/reverse-classroom/VR_Spectator_Camera.pptx
+          cat assets/presentations/reverse-classroom.pdf.b64.part* | base64 --decode > static/files/reverse-classroom/VR_Spectator_Camera.pdf
+          echo "9faf2d87bc31b66f154c9f9f689ba1b237e4028af35c951980ee65753c194197  static/files/reverse-classroom/VR_Spectator_Camera.pptx" | sha256sum --check
+          echo "08fe99258fcb3a10152df43ecc52ef708b17d0038ffda3d166e830b7280ca1d0  static/files/reverse-classroom/VR_Spectator_Camera.pdf" | sha256sum --check
       - name: Build site
         run: hugo --minify
       - name: Configure GitHub Pages

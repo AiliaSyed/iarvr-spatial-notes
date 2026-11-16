@@ -1,0 +1,13 @@
+{{- $pdf := .Get "pdf" | relURL -}}
+{{- $pptx := .Get "pptx" | relURL -}}
+<section class="spatial-slides" aria-label="Reverse Classroom presentation">
+  <div class="spatial-slides-head">
+    <div><span class="spatial-slides-kicker">REVERSE CLASSROOM · PRESENTATION</span><strong>VR Spectator Camera — 12 slides</strong></div>
+    <div class="spatial-slides-actions">
+      <a href="{{ $pdf }}" target="_blank" rel="noopener noreferrer">Open PDF ↗</a>
+      <a href="{{ $pptx }}" download>Download PowerPoint ↓</a>
+    </div>
+  </div>
+  <iframe src="{{ $pdf }}#view=FitH" title="VR Spectator Camera presentation PDF" loading="lazy"></iframe>
+  <p class="spatial-slides-caption">PDF preview: static slides. For playable embedded video demonstrations and speaker notes, open the PowerPoint in Microsoft PowerPoint. <a href="{{ $pptx }}" download>Download the PowerPoint</a>.</p>
+</section>

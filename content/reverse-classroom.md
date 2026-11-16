@@ -16,4 +16,4 @@ I implemented two camera approaches in Unity 6.3 LTS: a smoothed first-person sp
 
 ## Presentation
 
-I will add the presentation here after preparing and reviewing it. The [detailed journal entry]({{< relref "/posts/reverse-classroom-preparation" >}}) already includes the recorded demos.
+The **12-slide presentation** is now available inside my [full Reverse Classroom journal entry]({{< relref "/posts/reverse-classroom-preparation" >}}). It includes an embedded PDF preview and a downloadable PowerPoint with speaker notes and the three demo videos.

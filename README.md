@@ -37,3 +37,7 @@ Push commits to `main`. GitHub Actions automatically builds and deploys the Hugo
 Website: https://ailiasyed.github.io/iarvr-spatial-notes/
 
 **Editorial rule:** Distinguish experiences and ideas from actual implementations and measured results. Do not claim incomplete exercises or unverified performance comparisons as facts.
+
+## Reverse Classroom presentation downloads
+
+The Spectator Camera PowerPoint and PDF are stored as small base64 chunks under `assets/presentations/` to accommodate repository connector upload size limits. The GitHub Pages workflow reassembles them, verifies their SHA-256 checksums, and places the files under `static/files/reverse-classroom/` before building Hugo. The actual downloadable PowerPoint embeds the tutorial demonstration videos; the PDF is a static view.
