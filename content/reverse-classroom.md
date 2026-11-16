@@ -6,9 +6,9 @@ description: 'Hands-on implementation of a smoothed first-person spectator camer
 cover: 'images/reverse-classroom/third-person-poster.webp'
 ---
 
-## My selected topic
+## My assigned topic
 
-I chose [How To Make a VR Spectator Camera — Unity VR Tutorial](https://www.youtube.com/watch?v=4Z52P6jbSlE) for my Reverse Classroom session.
+For my Reverse Classroom session, I was assigned the topic [How To Make a VR Spectator Camera — Unity VR Tutorial](https://www.youtube.com/watch?v=4Z52P6jbSlE).
 
 I implemented two camera approaches in Unity 6.3 LTS: a smoothed first-person spectator view and an external third-person camera displayed through a Render Texture and a Raw Image.
 
