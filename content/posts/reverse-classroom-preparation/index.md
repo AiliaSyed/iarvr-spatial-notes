@@ -5,8 +5,8 @@ lastmod: '2026-11-16T04:31:34+01:00'
 draft: false
 category: 'Reverse Classroom'
 status: 'Implementation and presentation completed'
-cover: 'images/reverse-classroom/third-person-poster.webp'
-imagecaption: 'Frame from my own Unity third-person spectator recording; this is a prototype, not final gameplay.'
+cover: 'images/spectator-camera-cover.svg'
+imagecaption: 'Illustration of the two spectator views: a smoothed first-person view and an external third-person camera.'
 description: 'From a shaky headset mirror to a smoothed first-person spectator view and an external third-person camera — implementation, code, videos, problems, and ideas for my Parkour Challenge.'
 ---
 
